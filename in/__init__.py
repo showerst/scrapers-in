@@ -6,7 +6,7 @@ from pupa.scrape import Jurisdiction
 from datetime import datetime
 
 from .people import IndiaPersonScraper
-from .bills import IndaBillScraper
+from .bills import IndiaBillScraper
 
 class India(Jurisdiction):
     classification = 'legislature'
@@ -22,7 +22,14 @@ class India(Jurisdiction):
     scrapers = {
         "people": IndiaPersonScraper,
         "bills": IndiaBillScraper,
-    }    
+    }
+    legislative_sessions = [
+        {"identifier":"2017",
+         "name":"2017 Session",
+         "start_date": "2017-01-01",
+         "end_date": "2017-12-31"}
+    ]
+
 
     def get_organizations(self):
         parliament = Organization(self.name, classification=self.classification)
