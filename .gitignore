@@ -3,3 +3,4 @@ __pycache__/
 _cache
 _data
 .DS_Store
+*.py[cod]
